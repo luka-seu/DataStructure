@@ -1,7 +1,7 @@
 package com.plasticlove.list;
 
 public class Node {
-    public Node next;
+    public Node next = null;
     public int data;
     public Node(int data){
         this.data = data;

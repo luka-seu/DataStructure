@@ -1,0 +1,23 @@
+package com.com.plasticlove.array.test;
+
+import com.plasticlove.array.ArrayDataUtils;
+import org.junit.Test;
+
+
+
+public class ArrayDataUtilsTest {
+    int array[] = {15,42,56,41,13,78,65,789,324,15,32,45,74};
+    @Test
+    public void findMaxAndMin() {
+
+        ArrayDataUtils.findMaxAndMin(array);
+        System.out.println(ArrayDataUtils.MAX);
+        System.out.println(ArrayDataUtils.MIN);
+    }
+
+    @Test
+    public void findSecNum() {
+        int result = ArrayDataUtils.findSecNum(array);
+        System.out.println(result);
+    }
+}

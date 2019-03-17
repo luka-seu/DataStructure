@@ -1,14 +1,23 @@
 package com.plasticlove.list;
 
+
 public class MyList {
 
-    Node head = null;
+    private Node head;
+
+    public void setHead(Node head) {
+        this.head = head;
+    }
+
+    public Node getHead() {
+        return head;
+    }
 
     /**
      *
      */
-    public boolean addNode(int data) {
-        Node node = new Node(data);
+    public boolean addNode(Node node) {
+
         if (head == null) {
             head = node;
 
@@ -122,6 +131,200 @@ public class MyList {
 
 
     }
+
+    /**
+     * 寻找链表中倒数第reverseIndex个元素
+     * @param reverseIndex
+     * @return
+     */
+    public int findReverseElement(int reverseIndex){
+        if(reverseIndex<1||reverseIndex>length()){
+            return -1;
+        }
+        Node backNode = head;
+        Node frontNode = head;
+        int step = 0;
+        while(step<(reverseIndex-1)){
+            frontNode = frontNode.next;
+            step++;
+        }
+        while(frontNode.next!=null){
+            backNode = backNode.next;
+            frontNode = frontNode.next;
+        }
+
+        return backNode.data;
+    }
+
+    /**
+     * 链表的反转
+     *
+     */
+    public void reverseList(){
+        Node pReverseHead = head;
+        Node pNode = head;
+        Node pPrev = null;
+
+        while(pNode!=null){
+            Node pNext = pNode.next;
+            if(pNext==null){
+                pReverseHead = pNode;
+            }
+            pNode.next = pPrev;
+            pPrev = pNode;
+            pNode = pNext;
+        }
+        this.head = pReverseHead;
+    }
+
+    /**
+     * 从后向前输出链表
+     * @param pHead
+     */
+    public void reversePrint(Node pHead){
+        if(pHead!=null){
+            reversePrint(pHead.next);
+            System.out.println(pHead.data);
+        }
+    }
+
+    /**
+     * 寻找链表中间节点
+     * @return
+     */
+    public Node searchMidNode(){
+        Node slowNode = this.head;
+        Node fastNode = this.head;
+        while(fastNode!=null&&fastNode.next!=null&&fastNode.next.next!=null){
+            fastNode = fastNode.next.next;
+            slowNode = slowNode.next;
+        }
+        return slowNode;
+    }
+
+    /**
+     * 判断链表是否有环
+     * @return
+     */
+    public boolean isLoop(){
+        Node slowNode = this.head;
+        Node fastNode = this.head;
+        if(fastNode==null){
+            return false;
+        }
+        while(fastNode!=null&&fastNode.next!=null){
+            fastNode = fastNode.next.next;
+            slowNode = slowNode.next;
+            if(fastNode==slowNode){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 在不知道头节点的情况下删除指定节点
+     * @param node
+     * @return
+     */
+    public boolean deleteNode(Node node){
+        if(node==null||node.next==null){
+            return false;
+        }
+        int temp  = node.data;
+        node.data = node.next.data;
+        node.next.data = temp;
+        node.next = node.next.next;
+
+        return true;
+    }
+
+    /**
+     * 判断两个链表是否相交
+     * @param h1
+     * @param h2
+     * @return
+     */
+    public static boolean isIntersect(Node h1,Node h2){
+        if(h1==null||h2==null){
+            return false;
+        }
+        Node head1 = h1;
+        Node head2 = h2;
+        while(head1.next!=null){
+            head1 = head1.next;
+        }
+        while(head2.next!=null){
+            head2 = head2.next;
+        }
+
+        if(head1==head2){
+            return  true;
+        }
+        return false;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
