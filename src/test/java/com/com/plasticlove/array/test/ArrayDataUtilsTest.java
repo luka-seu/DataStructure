@@ -20,4 +20,20 @@ public class ArrayDataUtilsTest {
         int result = ArrayDataUtils.findSecNum(array);
         System.out.println(result);
     }
+
+    @Test
+    public void bubbleSortTest(){
+        ArrayDataUtils.bubbleSort(array);
+        for (int i:array){
+            System.out.println(i);
+        }
+    }
+
+    @Test
+    public void selectSortTest(){
+        int[] sort = ArrayDataUtils.selectSort(array);
+        for (int i:sort){
+            System.out.println(i);
+        }
+    }
 }

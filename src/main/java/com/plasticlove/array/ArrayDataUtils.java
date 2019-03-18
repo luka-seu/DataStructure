@@ -60,4 +60,52 @@ public class ArrayDataUtils
 		}
 		return sec;
 	}
+
+
+
+	//冒泡排序
+
+	public static int[] bubbleSort(int[] arr){
+		if(arr.length==0){
+			return null;
+		}
+		int len = arr.length;
+
+		for (int i =0;i<len;i++){        //外层循环控制排序趟数
+			for(int j = 0;j<len-1-i;j++){//内层循环控制每趟排序多少次
+				if(arr[j]>arr[j+1]){
+					int temp=arr[j];
+					arr[j]=arr[j+1];
+					arr[j+1]=temp;
+				}
+			}
+		}
+		return arr;
+	}
+
+	//选择排序
+	public static int[] selectSort(int[] arr){
+	if(arr.length==0){
+		return null;
+	}
+	int len = arr.length;
+	for(int i = 0;i<len;i++){
+		for(int j = i+1;j<len;j++){
+			if(arr[i]>arr[j]){
+				int temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
+		}
+	}
+	return arr;
+}
+
+	//交换位置
+	private static void swap(int a,int b){
+
+		int temp = a;
+		a = b;
+		b = temp;
+	}
 } 
