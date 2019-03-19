@@ -1,4 +1,4 @@
-package com.com.plasticlove.array.test;
+package com.com.plasticlove.test;
 
 import com.plasticlove.array.ArrayDataUtils;
 import org.junit.Test;
@@ -33,6 +33,14 @@ public class ArrayDataUtilsTest {
     public void selectSortTest(){
         int[] sort = ArrayDataUtils.selectSort(array);
         for (int i:sort){
+            System.out.println(i);
+        }
+    }
+
+    @Test
+    public void quickSort() {
+        ArrayDataUtils.quickSort(array,0,array.length-1);
+        for (int i :array){
             System.out.println(i);
         }
     }

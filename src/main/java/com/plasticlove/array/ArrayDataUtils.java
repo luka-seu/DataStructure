@@ -1,5 +1,7 @@
 package com.plasticlove.array;
 
+import java.util.Arrays;
+
 public class ArrayDataUtils
 {
 	public static int MAX;//数组最大值
@@ -99,6 +101,34 @@ public class ArrayDataUtils
 		}
 	}
 	return arr;
+}
+
+//快速排序
+public static void quickSort(int[] arr,int start,int end){
+	if(start>end){
+		return;
+	}
+	int key = arr[start];   //选取第一个值作为基准
+	int i = start;          //记录开启索引
+	int j = end;            //记录结束索引
+	int temp;
+	while(i!=j){
+		while(i<j&&arr[j]>=key){  //右边的大就递减
+			j--;
+		}
+		while(i<j&&arr[i]<=key){  //左边的小就递增
+			i++;
+		}
+		temp = arr[i];
+		arr[i] = arr[j];          //不符合左小右大就交换左右位置的值
+		arr[j] = temp;
+	}
+	arr[start] = arr[i];          //将基准值放在分割线上
+	arr[i] = key;
+	quickSort(arr,start,i-1);
+	quickSort(arr,j+1,end);
+
+
 }
 
 	//交换位置
