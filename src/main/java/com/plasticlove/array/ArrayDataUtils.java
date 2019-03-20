@@ -131,6 +131,76 @@ public static void quickSort(int[] arr,int start,int end){
 
 }
 
+//找出数组中的重复数字
+public static Integer getDuplicate(int[] arr){
+	int len = arr.length;
+	if(len<=0){
+		return null;
+	}
+	for(int i = 0;i<len;i++){
+		if(arr[i]<0||arr[i]>len-1){
+			return null;
+		}
+	}
+
+	for(int i = 0;i<len;i++){
+		while(arr[i]!=i){
+			if(arr[i]==arr[arr[i]]){
+				return arr[i];
+			}
+			int temp = arr[i];
+			arr[i] = arr[temp];
+			arr[temp] = temp;
+
+		}
+	}
+	return null;
+}
+
+	//不修改数组找出重复数字
+	public static Integer getDuplicateWithoutModify(int arr[]){
+		int len = arr.length;
+		if(len<=0){
+			return null;
+		}
+		int start = 1;
+		int end = len-1;
+		while(end>=start){
+			int middle = ((end-start)>>1)+start;
+			int count = countRange(arr,start,middle);
+			if(end==start){
+				if(count>1){
+					return start;
+				}else{
+					break;
+				}
+			}
+			if(count>(middle-start+1)){
+				end = middle;
+			}else{
+				start = middle+1;
+			}
+		}
+		return null;
+
+
+
+	}
+	//统计在某个区间数组元素出现次数
+	private static int countRange(int[] arr,int start,int end){
+		int len = arr.length;
+		if(len<=0){
+			return 0;
+		}
+		int count = 0;
+		for(int i=0;i<len;i++){
+			if(arr[i]>=start&&arr[i]<=end){
+				count++;
+			}
+		}
+		return count;
+	}
+
 	//交换位置
 	private static void swap(int a,int b){
 

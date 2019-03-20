@@ -7,6 +7,7 @@ import org.junit.Test;
 
 public class ArrayDataUtilsTest {
     int array[] = {15,42,56,41,13,78,65,789,324,15,32,45,74};
+    int array2[] = {2,3,1,0,2,5,3};
     @Test
     public void findMaxAndMin() {
 
@@ -43,5 +44,11 @@ public class ArrayDataUtilsTest {
         for (int i :array){
             System.out.println(i);
         }
+    }
+
+    @Test
+    public void testGetDuplicate(){
+        Integer duplicate = ArrayDataUtils.getDuplicateWithoutModify(array2);
+        System.out.println(duplicate.toString());
     }
 }
