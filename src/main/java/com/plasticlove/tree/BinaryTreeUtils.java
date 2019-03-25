@@ -2,7 +2,9 @@ package com.plasticlove.tree;
 
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * @author luka-seu
@@ -54,6 +56,34 @@ public class BinaryTreeUtils {
         System.out.println(root.getData());
         middleOrder(root.getRightTree());
     }
+
+    //返回二叉树的深度
+    public static int getDeepth(TreeNode root){
+        if (root==null){
+            return 0;
+        }
+        int left = getDeepth(root.getLeftTree());
+        int right = getDeepth(root.getRightTree());
+        return (left>right)?(left+1):(right+1);
+    }
+    //层序遍历二叉树（队列）
+    public static void layerPrint(TreeNode root){
+        Queue<TreeNode> treeNodeQueue = new LinkedList<>();
+        ((LinkedList<TreeNode>) treeNodeQueue).add(root);
+        while(treeNodeQueue.size()>0){
+            TreeNode node = ((LinkedList<TreeNode>) treeNodeQueue).getFirst();
+            ((LinkedList<TreeNode>) treeNodeQueue).pop();
+            System.out.println(node);
+            if (node.getLeftTree()!=null){
+                ((LinkedList<TreeNode>) treeNodeQueue).add(node.getLeftTree());
+            }
+
+            if (node.getRightTree()!=null){
+                ((LinkedList<TreeNode>) treeNodeQueue).add(node.getRightTree());
+            }
+        }
+    }
+
 
     //重建二叉树，根据前序和中序遍历结果重建二叉树
     public static TreeNode reconstructTree(int[] frontArr,int frontStart,int frontEnd,int[] middleArr,int middleStart,int middleEnd){

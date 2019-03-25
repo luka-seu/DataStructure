@@ -5,7 +5,7 @@ import com.plasticlove.tree.BinaryTreeUtils;
 import com.plasticlove.tree.TreeNode;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+
 
 public class BinaryTreeUtilsTest {
 
@@ -43,5 +43,23 @@ public class BinaryTreeUtilsTest {
         System.out.println(kthNode);
 
 
+    }
+
+    @Test
+    public void testGetDeepth(){
+        int[] arr1 = {1,2,4,7,3,5,6,8};
+        int[] arr2 = {4,7,2,1,5,3,8,6};
+        TreeNode tree = BinaryTreeUtils.reconstructTree(arr1, 0, arr1.length - 1, arr2, 0, arr2.length - 1);
+
+        int deepth = BinaryTreeUtils.getDeepth(tree);
+        System.out.println(deepth);
+    }
+
+    @Test
+    public void layerPrint(){
+        int[] arr1 = {8,6,5,7,10,9,11};
+        int[] arr2 = {5,6,7,8,9,10,11};
+        TreeNode tree = BinaryTreeUtils.reconstructTree(arr1, 0, arr1.length - 1, arr2, 0, arr2.length - 1);
+        BinaryTreeUtils.layerPrint(tree);
     }
 }
