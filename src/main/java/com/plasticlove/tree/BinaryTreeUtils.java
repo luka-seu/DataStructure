@@ -51,7 +51,7 @@ public class BinaryTreeUtils {
         if (root==null){
             return ;
         }
-        List<Integer> middleList = new ArrayList<>();
+        // List<Integer> middleList = new ArrayList<>();
         middleOrder(root.getLeftTree());
         System.out.println(root.getData());
         middleOrder(root.getRightTree());

@@ -13,16 +13,16 @@ import org.junit.Test;
 public class ListUtilsTest {
     private MyList mylist = new MyList();
     Node node1 = new Node(4);
-    Node node2 = new Node(16);
-    Node node3 = new Node(58);
+    Node node2 = new Node(5);
+    Node node3 = new Node(6);
     Node node4 = new Node(6);
-    Node node5 = new Node(63);
-    Node node6 = new Node(72);
-    Node node7 = new Node(81);
-    Node node8 = new Node(37);
-    Node node9 = new Node(23);
+    Node node5 = new Node(7);
+    Node node6 = new Node(7);
+    Node node7 = new Node(9);
+    Node node8 = new Node(10);
+    Node node9 = new Node(10);
     Node node10 = new Node(10);
-    Node node11 = new Node(21);
+    Node node11 = new Node(20);
     Node node12 = new Node(33);
 
 
@@ -34,8 +34,16 @@ public class ListUtilsTest {
         mylist.addNode(node4);
         mylist.addNode(node5);
         mylist.addNode(node6);
-        Node reverseHead = ListUtils.reverseList(mylist.getHead());
-        System.out.println(reverseHead);
+        mylist.addNode(node7);
+        mylist.addNode(node8);
+        mylist.addNode(node9);
+        mylist.addNode(node10);
+        mylist.addNode(node11);
+        mylist.addNode(node12);
+
+        Node node = ListUtils.deleteDuplication(node1);
+        System.out.println(node);
+
 
     }
 }

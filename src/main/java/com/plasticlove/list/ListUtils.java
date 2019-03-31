@@ -1,5 +1,8 @@
 package com.plasticlove.list;
 
+import java.util.HashMap;
+import java.util.Set;
+
 /**
  * @author luka-seu
  * @description 链表相关算法
@@ -22,5 +25,36 @@ public class ListUtils {
             pNode = pNext;
         }
         return pReverseHead;
+    }
+
+    public static Node deleteDuplication(Node pHead)
+    {
+        if(pHead==null) {
+            return null;
+        }
+        HashMap map = new HashMap();
+
+        while(pHead.next!=null){
+            int index = 0;
+            Node cur = pHead;
+            while(pHead.data==pHead.next.data){
+                index++;
+                pHead = pHead.next;
+            }
+            map.put(cur,index);
+            pHead = pHead.next;
+        }
+
+        Node[] nodeArr1 = (Node[]) map.keySet().toArray();
+        for(Node node:nodeArr1){
+            if((int)map.get(node)>0){
+                map.remove(node);
+            }
+        }
+        Node[] nodeArr = (Node[]) map.keySet().toArray();
+        for(int i = 0;i<nodeArr.length-1;i++){
+            nodeArr[i].next = nodeArr[i+1];
+        }
+        return nodeArr[0];
     }
 }

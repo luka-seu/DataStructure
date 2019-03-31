@@ -62,4 +62,12 @@ public class BinaryTreeUtilsTest {
         TreeNode tree = BinaryTreeUtils.reconstructTree(arr1, 0, arr1.length - 1, arr2, 0, arr2.length - 1);
         BinaryTreeUtils.layerPrint(tree);
     }
+
+    @Test
+    public void testMid(){
+        int[] arr1 = {8,6,5,7,10,9,11};
+        int[] arr2 = {5,6,7,8,9,10,11};
+        TreeNode tree = BinaryTreeUtils.reconstructTree(arr1, 0, arr1.length - 1, arr2, 0, arr2.length - 1);
+        BinaryTreeUtils.middleOrder(tree);
+    }
 }
