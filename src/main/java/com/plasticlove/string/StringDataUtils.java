@@ -1,5 +1,6 @@
 package com.plasticlove.string;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -134,6 +135,23 @@ public class StringDataUtils {
             str[j] = t;
         }
     }
+
+
+
+
+
+        public static String BigDataMutiPly(String s1,String s2){
+
+            StringBuffer sb1=new StringBuffer();
+            StringBuffer sb2=new StringBuffer();
+            sb1.append(s1);
+            sb2.append(s2);
+            BigInteger bg1=new BigInteger(sb1.toString());
+            BigInteger bg2=new BigInteger(sb2.toString());
+            return bg1.multiply(bg2).toString();
+
+        }
+
 
 
 }
