@@ -9,7 +9,7 @@ import java.util.Stack;
  * @description 抽纸牌
  * @create 2019/4/4-19:28
  */
-public class CardsPull {
+public class TencentCardsPull {
     public static int getResult(int[] arr){
         int len = arr.length;
         Arrays.sort(arr);

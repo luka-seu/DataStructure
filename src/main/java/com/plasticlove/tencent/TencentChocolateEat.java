@@ -7,7 +7,7 @@ import java.util.Scanner;
  * @description 小Q的父母要出差N天，走之前给小Q留下了M块巧克力。小Q决定每天吃的巧克力数量不少于前一天吃的一半，但是他又不想在父母回来之前的某一天没有巧克力吃，请问他第一天最多能吃多少块巧克力
  * @create 2019/4/4-20:08
  */
-public class ChocolateEat {
+public class TencentChocolateEat {
     public static long getResult(int days,int nums){
         // int temp = 0;
         // for (int i = 0;i<days-1;i++){

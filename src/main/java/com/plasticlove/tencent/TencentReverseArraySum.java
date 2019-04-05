@@ -10,7 +10,7 @@ import java.util.Scanner;
  * @description 翻转数列
  * @create 2019/4/4-18:23
  */
-public class ReverseArraySum {
+public class TencentReverseArraySum {
     public static int getSumOfReverseArray(int n,int m){
         if (n>Math.pow(10,9)||n<2||m<1||n%(2*m)!=0){
             return -1;
