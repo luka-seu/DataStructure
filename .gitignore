@@ -132,5 +132,6 @@ local.properties
 .worksheet
 *.iml
 /.idea
+*.kotlin**
 
 
