@@ -1,5 +1,7 @@
 package com.plasticlove.list;
 
+import jdk.nashorn.internal.parser.JSONParser;
+
 public class Node {
     public Node next = null;
     public int data;
@@ -14,6 +16,7 @@ public class Node {
                 ", data=" + data +
                 '}';
     }
+
 
 
     /*public int getData() {
