@@ -9,8 +9,8 @@ import java.util.ArrayList;
  */
 public class ArrayReorderArray {
     public void reOrderArray(int [] array) {
-        ArrayList<Integer> list1 = new ArrayList();
-        ArrayList list2 = new ArrayList();
+        ArrayList<Integer> list1 = new ArrayList<Integer>();
+        ArrayList<Integer> list2 = new ArrayList<Integer>();
         for(int i=0;i<array.length;i++){
             if(array[i]%2==0){
                 list2.add(array[i]);

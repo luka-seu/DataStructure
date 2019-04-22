@@ -10,7 +10,7 @@ import java.util.Stack;
  * @create 2019/4/4-14:57
  */
 public class ArrayLastRemaining {
-    public int LastRemaining_Solution(int n, int m) {
+    public int lastRemaining_Solution(int n, int m) {
         if (n <= 0 || m <= 0) {
             return -1;
         }
@@ -21,6 +21,7 @@ public class ArrayLastRemaining {
         }
         int index = -1;
         while (list.size() > 1) {
+            //圆圈的话对集合长度取模
             index = (index + m) % list.size();
             list.remove(index);
             index--;

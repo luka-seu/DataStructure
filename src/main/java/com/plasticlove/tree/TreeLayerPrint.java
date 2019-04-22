@@ -11,20 +11,20 @@ import java.util.Queue;
 public class TreeLayerPrint {
 
     //层序遍历二叉树（队列）
-    public static void layerPrint(TreeNode root){
-        Queue<TreeNode> treeNodeQueue = new LinkedList<>();
-        ((LinkedList<TreeNode>) treeNodeQueue).add(root);
-        while(treeNodeQueue.size()>0){
-            TreeNode node = ((LinkedList<TreeNode>) treeNodeQueue).getFirst();
-            ((LinkedList<TreeNode>) treeNodeQueue).pop();
-            System.out.println(node);
-            if (node.left!=null){
-                ((LinkedList<TreeNode>) treeNodeQueue).add(node.left);
-            }
+    public void layerPrint(TreeNode root){
+       Queue<TreeNode> queue = new LinkedList<>();
 
-            if (node.right!=null){
-                ((LinkedList<TreeNode>) treeNodeQueue).add(node.right);
-            }
-        }
+       TreeNode temp = null;
+       queue.offer(root);
+       while (!queue.isEmpty()){
+           temp = queue.poll();
+           System.out.println(temp.data);
+           if (root.left!=null){
+               queue.offer(root.left);
+           }
+           if (root.right!=null){
+               queue.offer(root.right);
+           }
+       }
     }
 }

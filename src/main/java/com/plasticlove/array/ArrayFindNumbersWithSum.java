@@ -9,8 +9,10 @@ import java.util.ArrayList;
  */
 public class ArrayFindNumbersWithSum {
     public ArrayList<Integer> FindNumbersWithSum(int [] array, int sum) {
+        //双指针
         int i = 0;
         int j = array.length-1;
+        //两个数离得越远，乘积越小
         ArrayList list = new ArrayList();
         while(i<j){
             if(array[i]+array[j]==sum){
@@ -18,8 +20,10 @@ public class ArrayFindNumbersWithSum {
                 list.add(array[j]);
                 return list;
             }else if(array[i]+array[j]>sum){
+                //大了右边左移
                 j--;
             }else{
+                //小了左边右移
                 i++;
             }
         }

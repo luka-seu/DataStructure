@@ -46,6 +46,7 @@ public class ArrayRotatedSearchTarget {
             } else {
                 return helper(arr, mid + 1, end, target);
             }
+            //邮编排好序的
         } else if (arr[mid] < arr[end]) {
             if (target > arr[mid] && target <= arr[end]) {
                 for (int i = mid + 1; i < end; i++) {

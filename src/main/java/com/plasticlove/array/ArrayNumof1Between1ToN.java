@@ -19,4 +19,29 @@ public class ArrayNumof1Between1ToN {
         }
         return count;
     }
+
+    //第二种解法
+    public int getResult(int n){
+
+        int base = 1;
+
+        int temp = n;
+        int count = 0;
+        while(temp>0){
+            //获取当前位
+            int weight = temp%10;
+            //获取高位
+            temp = temp/10;
+            count = count+temp*base;
+            if (weight==1){
+                count = count+(n%base)+1;
+            }else if (weight>1){
+                count = count+base;
+            }
+            base = base*10;
+        }
+
+
+        return count;
+    }
 }

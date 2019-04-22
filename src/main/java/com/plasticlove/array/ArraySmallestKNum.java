@@ -15,7 +15,7 @@ public class ArraySmallestKNum {
         if (k>arr.length){
             return result;
         }
-
+        //冒泡排序
         for (int i = 0;i<k;i++){
             for (int j = arr.length-2;j>=i;j--){
                 if (arr[j]>arr[j+1]){

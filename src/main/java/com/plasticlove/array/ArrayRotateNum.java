@@ -12,6 +12,7 @@ public class ArrayRotateNum {
             return 0;
         }
         int i = array.length-1;
+        //从后往前找
         while(i>0){
             if(array[i]<array[i-1]){
                 break;
