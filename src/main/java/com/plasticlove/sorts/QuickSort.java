@@ -14,7 +14,7 @@ public class QuickSort {
 
     @Test
     public void test(){
-        int[] arr = {2,45,3,67,43,98,12,86,34};
+        int[] arr = {40,45,3,67,43,98,12,86,34};
         quickSort(arr,0,arr.length-1);
         for (int i:arr){
             System.out.println(i);
