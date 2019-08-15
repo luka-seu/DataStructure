@@ -1,34 +1,40 @@
 package com.plasticlove.sorts;
 
+import org.junit.Test;
+
 /**
- * @author luka-seu
- * @description 冒泡排序
- * @create 2019-04 12-11:59
- **/
-
+ * 冒泡排序
+ * @author Luka
+ */
 public class BubbleSort {
-
-    public static void main(String[] args) {
-        int[] arr = {2,45,3,67,43,98,12,86,34};
-        bubble(arr);
-        for (int i:arr){
-            System.out.println(i);
+    @Test
+    public void test(){
+        int[] arr = {23,34,2,54,678,23,12,35};
+        this.bubbleSort(arr);
+        for (int m: arr){
+            System.out.println(m);
         }
     }
 
-    public static void bubble(int[] arr){
-        if (arr.length==0){
+    public void bubbleSort(int[] arr){
+        //每次将最大的数放在后面
+        if (arr==null||arr.length<2){
             return;
         }
+        //i表示需要冒泡的次数
         for (int i = 0;i<arr.length;i++){
-            for (int j = 0;j<arr.length-1-i;j++){
+            //从零开始，相邻比较
+            for (int j = 0;j<arr.length-1;j++){
                 if (arr[j]>arr[j+1]){
-                    int temp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = temp;
+                    swap(arr,j,j+1);
                 }
             }
         }
-    }
 
+    }
+    public void swap(int[] arr,int a,int b){
+        int temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
+    }
 }
