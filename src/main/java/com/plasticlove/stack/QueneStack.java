@@ -2,6 +2,8 @@ package com.plasticlove.stack;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedDeque;
 
 /**
  * @author luka-seu
@@ -56,5 +58,7 @@ public class QueneStack {
         data.add(value);
         return value;
     }
+
+
 
 }

@@ -6,7 +6,7 @@ package com.plasticlove.sorts;
  */
 public class QuickSort {
     public static void main(String[] args) {
-        int[] arr = {23,45,2,34,234,22,56,34,67};
+        int[] arr = {40,45,2,34,234,22,56,34,67};
         quickSort(arr,0,arr.length-1);
         for (int i:arr){
             System.out.println(i);
