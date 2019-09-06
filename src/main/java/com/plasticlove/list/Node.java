@@ -1,6 +1,5 @@
 package com.plasticlove.list;
 
-import jdk.nashorn.internal.parser.JSONParser;
 
 public class Node {
     public Node next = null;
@@ -9,13 +8,13 @@ public class Node {
         this.data = data;
     }
 
-    @Override
-    public String toString() {
-        return "Node{" +
-                "next=" + next +
-                ", data=" + data +
-                '}';
-    }
+    // @Override
+    // public String toString() {
+    //     return "Node{" +
+    //             "next=" + next +
+    //             ", data=" + data +
+    //             '}';
+    // }
 
 
 
